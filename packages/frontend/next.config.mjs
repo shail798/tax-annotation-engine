@@ -10,9 +10,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: process.env.NODE_ENV === 'production' && process.env.BACKEND_URL
-          ? `${process.env.BACKEND_URL}/api/:path*`
-          : 'http://localhost:5000/api/:path*',
+        destination: 'https://tax-annotation-engine.onrender.com/api/:path*',
       },
     ];
   },
