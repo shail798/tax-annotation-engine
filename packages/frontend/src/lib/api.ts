@@ -1,4 +1,6 @@
 import axios from 'axios';
+import type { FormTemplate, FormAnnotation, FilledField, FilledForm } from './storage';
+import type { TaxpayerData, ValidationError } from './dataMapping';
 
 const api = axios.create({
   baseURL: '/api',
@@ -7,98 +9,8 @@ const api = axios.create({
   },
 });
 
-// Types (matching backend interfaces)
-export interface FormTemplate {
-  template_id: string;
-  form_type: string;
-  form_name: string;
-  tax_year: number;
-  version: string;
-  page_count: number;
-  annotations: FormAnnotation[];
-  created_at: string;
-  updated_at: string;
-  created_by: string;
-}
-
-export interface FormAnnotation {
-  field_id: string;
-  position: {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    page: number;
-  };
-  data_path: string;
-  field_type: 'text' | 'number' | 'currency' | 'ssn' | 'date' | 'checkbox';
-  format_rules?: {
-    pattern?: string;
-    mask?: boolean;
-    case?: 'uppercase' | 'lowercase' | 'titlecase';
-    maxLength?: number;
-    type?: 'currency' | 'percentage' | 'decimal' | 'integer';
-    precision?: number;
-  };
-  validation_rules?: {
-    required?: boolean;
-    min?: number;
-    max?: number;
-    pattern?: string;
-    minLength?: number;
-    maxLength?: number;
-  };
-}
-
-export interface FilledField {
-  field_id: string;
-  position: {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    page: number;
-  };
-  raw_value: any;
-  display_value: string;
-  formatted: boolean;
-}
-
-export interface TaxpayerData {
-  taxpayer: {
-    firstName: string;
-    lastName: string;
-    ssn: string;
-    address: {
-      street: string;
-      city: string;
-      state: string;
-      zip: string;
-    };
-  };
-  spouse?: {
-    firstName?: string;
-    lastName?: string;
-    ssn?: string;
-  };
-  income: {
-    wages?: number;
-    interest?: number;
-    dividends?: number;
-  };
-  dependents?: Array<{
-    firstName: string;
-    lastName: string;
-    ssn: string;
-    relationship: string;
-  }>;
-}
-
-export interface ValidationError {
-  field_id: string;
-  error: string;
-  data_path: string;
-}
+// Re-export types for external use
+export type { FormTemplate, FormAnnotation, FilledField, FilledForm, TaxpayerData, ValidationError };
 
 export interface ApiResponse<T> {
   success: boolean;

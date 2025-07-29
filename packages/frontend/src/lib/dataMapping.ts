@@ -1,4 +1,4 @@
-import { FormTemplate, FormAnnotation, FilledField } from '../storage/inMemoryStorage';
+import { FormTemplate, FormAnnotation, FilledField } from './storage';
 
 export interface TaxpayerData {
   taxpayer: {

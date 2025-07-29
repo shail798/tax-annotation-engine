@@ -69,7 +69,7 @@ export interface FilledField {
   formatted: boolean;
 }
 
-// In-memory storage
+// In-memory storage class
 class InMemoryStorage {
   private templates: Map<string, FormTemplate> = new Map();
   private filledForms: Map<string, FilledForm> = new Map();
