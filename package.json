@@ -13,12 +13,12 @@
     "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "start:backend": "npm run start --workspace=packages/backend",
     "start:frontend": "npm run start --workspace=packages/frontend",
-    "build": "npm run build --workspaces",
+    "build": "npm run build:frontend && npm run build:backend",
     "build:backend": "npm run build --workspace=packages/backend",
-    "build:frontend": "npm run build --workspace=packages/frontend",
+    "build:frontend": "npm run build --workspace=packages/frontend && cp -r packages/frontend/.next public",
     "test": "npm run test --workspaces",
     "lint": "npm run lint --workspaces",
-    "clean": "rimraf packages/*/dist packages/*/node_modules node_modules"
+    "clean": "rimraf packages/*/dist packages/*/node_modules node_modules public"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
