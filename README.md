@@ -1,89 +1,36 @@
-# Tax Form Annotation System
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A comprehensive system for automated tax form filling with field mapping, formatting, and validation.
+## Getting Started
 
-## Tech Stack
-
-### Backend
-- **Express.js** - Web framework
-- **TypeScript** - Type safety
-- **Zod** - Runtime validation
-
-### Frontend
-- **Next.js 14** - React framework with App Router
-- **shadcn/ui** - UI components
-- **Tailwind CSS** - Styling
-- **Axios** - HTTP client
-
-## Project Structure
-
-```
-tax-form-annotation-system/
-├── packages/
-│   ├── backend/                    # Express.js API server
-│   │   ├── src/
-│   │   │   ├── index.ts           # Server entry point
-│   │   │   ├── routes/            # API routes
-│   │   │   ├── services/          # Data mapping & formatting
-│   │   │   ├── storage/           # In-memory storage with templates
-│   │   │   └── middleware/        # Error handling & validation
-│   │   └── package.json
-│   └── frontend/                   # Next.js web application
-│       ├── src/
-│       │   ├── app/               # Next.js App Router pages
-│       │   ├── components/        # React components
-│       │   └── lib/               # Utilities and API client
-│       └── package.json
-├── package.json                   # Root workspace configuration
-└── README.md
-```
-
-## Setup
-
-### Prerequisites
-- Node.js 18+ 
-- npm 9+
-
-### Installation
-
-1. **Clone and install dependencies:**
-   ```bash
-   git clone https://github.com/shail798/tax-annotation-engine.git
-   cd tax-annotation-engine
-   npm install
-   ```
-
-2. **Start development servers:**
-   ```bash
-   npm run dev
-   ```
-   This starts both backend (port 5000) and frontend (port 3000) concurrently.
-
-3. **Open the application:**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
-
-### Individual Services
+First, run the development server:
 
 ```bash
-# Backend only
-npm run dev:backend
-
-# Frontend only  
-npm run dev:frontend
-
-# Build all
-npm run build
-
-# Lint all
-npm run lint
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Features
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Form Templates (Form 1040 and W-2)
-- Data Mapping with configurable paths
-- Field Formatting (SSN, currency, text case)
-- Comprehensive validation
-- Visual form rendering
-- RESTful API
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

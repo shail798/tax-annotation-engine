@@ -14,8 +14,8 @@ node_modules/
 coverage/
 
 # next.js
-packages/frontend/.next/
-packages/frontend/out/
+.next/
+out/
 
 # production
 build/
@@ -30,8 +30,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
-public/
 
 # env files (can opt-in for committing if needed)
 .env*
