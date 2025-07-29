@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:full": "concurrently \"npm run dev\" \"cd ../backend && npm run dev\"",
     "build": "next build",
     "start": "next start",
+    "start:full": "npm run build && concurrently \"npm run start\" \"cd ../backend && npm run start\"",
+    "build:full": "npm run build && cd ../backend && npm run build",
     "lint": "next lint"
   },
   "dependencies": {
@@ -30,6 +33,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^8.2.2",
     "eslint": "^9",
     "eslint-config-next": "15.4.4",
     "tailwindcss": "^4",
